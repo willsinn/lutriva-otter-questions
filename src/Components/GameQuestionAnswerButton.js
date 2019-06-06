@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 
 class GameQuestionAnswerButton extends Component {
-  state = {
-    isCorrect: ""
-  }
+    state = {
+      isCorrect: "",
+      playerScore: 0
+    }
+
   handleColorChange = (event) => {
       if (this.props.isAnswered) {
         alert("cannot change answer, move onto the next question!")
         this.setState({isCorrect:this.state.isCorrect})
       } else {
-      this.props.handleClick(event)
+      this.props.handleAnswerClick(event)
       this.handleCorrectScore(event)
 
   }
@@ -17,14 +19,16 @@ class GameQuestionAnswerButton extends Component {
 
   handleCorrectScore = (event) => {
   let targetBool = `${event.target.innerHTML}`.toLowerCase()
+  // debugger
   let questionAnswer = this.props.answer
   if (targetBool === "true" && questionAnswer === true) {
-    console.log('%c correct!', 'color: green; font-style: italic;')
-    this.setState({isCorrect: "yes"})
+    //find specii question and update the isCorrect property
+    this.setState({isCorrect: "yes", playerScore:this.state.playerScore+=1})
+    this.props.handleScoreChange(this.state.playerScore)
+
   } else if (targetBool === "false" && questionAnswer === false) {
-    console.log('%c correct!', 'color: green; font-style: italic;')
     this.setState({isCorrect: "yes"})
-    this.props.handleScore(event)
+    this.props.handleScoreChange(this.state.playerScore)
 
   } else {
     this.setState({isCorrect: "no"})

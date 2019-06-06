@@ -6,7 +6,8 @@ import GameQuestion from './GameQuestion.js'
 class QuestionsContainer extends Component {
 
   render(){
-    console.log('%cQuestionsContainer-LOG|questions-prop', 'color: red; font-weight: bold;', this.props.questions)
+    // console.log("QUESTIONS CONTAINER PROPS", this.props);
+    // console.log('%cQuestionsContainer-LOG|questions-prop', 'color: red; font-weight: bold;', this.props.questions)
     const shuffler = this.props.questions.sort(() => 0.5 - Math.random())
     let randomFiveQuestions = shuffler.slice(0, 5)
     let gameQuestions;
@@ -15,6 +16,7 @@ class QuestionsContainer extends Component {
                   id={question.id}
                   text={question.text}
                   answer={question.answer}
+                  handleScoreChange={this.props.handleScoreChange}
                 />)
 
     });

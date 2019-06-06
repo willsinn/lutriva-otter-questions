@@ -17,25 +17,30 @@ class GameQuestion extends Component {
   }
 
   render(){
+    // console.log("game questions props", this.props);
     return(
       <li className="gameQuestion">
         <div>{this.props.text}</div>
         <GameQuestionAnswerButton
           btnText={["TRUE"]}
-          handleClick={this.handleAnswerClick}
+          handleAnswerClick={this.handleAnswerClick}
           handleColorChange={this.handleColorChange}
           isAnswered={this.state.isAnswered}
           answer={this.props.answer}
+          handleScoreChange={this.props.handleScoreChange}
+
 
 
 
           />
         <GameQuestionAnswerButton
           btnText={["FALSE"]}
-          handleClick={this.handleAnswerClick}
+          handleAnswerClick={this.handleAnswerClick}
           handleColorChange={this.handleColorChange}
           isAnswered={this.state.isAnswered}
           answer={this.props.answer}
+          handleScoreChange={this.props.handleScoreChange}
+
 
 
 
