@@ -13,26 +13,8 @@ class GameQuestion extends Component {
 
 
   handleAnswerClick = (event) => {
-    if (this.state.isAnswered) {
-      alert("cannot change answer, move onto the next question!")
-    } else {
       this.setState({isAnswered: true})
-      return this.handleColorChange(event)
-    }
   }
-    handleColorChange = (event) => {
-      let targetBool = `${event.target.innerHTML}`.toLowerCase()
-      let questionAnswer = this.props.answer
-      console.log(this.props.answer)
-      console.log(targetBool);
-      if (targetBool === "true" && questionAnswer === true) {
-        console.log('%c correct!', 'color: green; font-style: italic;')
-      } else if (targetBool === "false" && questionAnswer === false) {
-        console.log('%c correct!', 'color: green; font-style: italic;')
-      } else {
-        console.log('%c wrong!', 'color: green; font-style: italic;')
-      }
-    }
 
   render(){
     return(
@@ -41,13 +23,20 @@ class GameQuestion extends Component {
         <GameQuestionAnswerButton
           btnText={["TRUE"]}
           handleClick={this.handleAnswerClick}
+          handleColorChange={this.handleColorChange}
           isAnswered={this.state.isAnswered}
+          answer={this.props.answer}
+
 
           />
         <GameQuestionAnswerButton
           btnText={["FALSE"]}
           handleClick={this.handleAnswerClick}
+          handleColorChange={this.handleColorChange}
           isAnswered={this.state.isAnswered}
+          answer={this.props.answer}
+
+
         />
 
       </li>

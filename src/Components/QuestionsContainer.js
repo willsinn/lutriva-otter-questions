@@ -9,7 +9,7 @@ class QuestionsContainer extends Component {
     console.log('%cQuestionsContainer-LOG|questions-prop', 'color: red; font-weight: bold;', this.props.questions)
     let gameQuestions;
     gameQuestions = this.props.questions.map( question => {
-      return (<GameQuestion
+      return ( <GameQuestion
                   id={question.id}
                   text={question.text}
                   answer={question.answer}

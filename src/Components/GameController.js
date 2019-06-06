@@ -4,6 +4,7 @@ import QuestionsContainer from './QuestionsContainer.js';
 
 
 class GameController extends Component {
+
   render(){
     console.log('%cGameController-LOG|score-prop', 'color: green; font-style: italic;', this.props.score)
     return(
