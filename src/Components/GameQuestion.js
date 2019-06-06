@@ -28,6 +28,7 @@ class GameQuestion extends Component {
           answer={this.props.answer}
 
 
+
           />
         <GameQuestionAnswerButton
           btnText={["FALSE"]}
@@ -35,6 +36,7 @@ class GameQuestion extends Component {
           handleColorChange={this.handleColorChange}
           isAnswered={this.state.isAnswered}
           answer={this.props.answer}
+
 
 
         />

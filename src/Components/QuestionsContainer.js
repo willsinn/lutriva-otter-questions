@@ -7,8 +7,10 @@ class QuestionsContainer extends Component {
 
   render(){
     console.log('%cQuestionsContainer-LOG|questions-prop', 'color: red; font-weight: bold;', this.props.questions)
+    const shuffler = this.props.questions.sort(() => 0.5 - Math.random())
+    let randomFiveQuestions = shuffler.slice(0, 5)
     let gameQuestions;
-    gameQuestions = this.props.questions.map( question => {
+    gameQuestions = randomFiveQuestions.map( question => {
       return ( <GameQuestion
                   id={question.id}
                   text={question.text}

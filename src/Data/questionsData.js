@@ -1,7 +1,7 @@
 export default {
   "gameInfo" :  {
     "name" : "lutrivia",
-    "score" : 1
+    "score" : 0
 },
     "questions": [
         {

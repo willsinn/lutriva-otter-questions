@@ -24,9 +24,10 @@ class GameQuestionAnswerButton extends Component {
   } else if (targetBool === "false" && questionAnswer === false) {
     console.log('%c correct!', 'color: green; font-style: italic;')
     this.setState({isCorrect: "yes"})
+    this.props.handleScore(event)
+
   } else {
     this.setState({isCorrect: "no"})
-
   }
 }
   render(){
